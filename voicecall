@@ -1,0 +1,22 @@
+> REQUEST_SET_PREFERRED_NETWORK_TYPE : %%getNetworkMode%% [SUB0]@->Select Network mode:$1 {color}:blue 
+< VOICE_REGISTRATION_STATE {%%getVoiceRegState%%, %%keepOrignal%%, %%keepOrignal%%, %%getRilRadioTech%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%,@->Voice registration State:$1 ,LAC:$2 ,CID:$3 ,Radio tech:$4 ,Base station:$5 ,System ID:$9 ,Network ID:$10, In PRL:$12 {color}:Gray 
+< OPERATOR {%%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%}@->Operator long name:$1 ,MCC/MNC:$3 {color}:Red
+GsmSST] Poll ServiceState done:  oldSS=[%%getVoiceRegState%% %%getVoiceRegState%% %%keepOrignal%% %%keepOrignal%%@->Roaming status:$3 {color}:Pink
+IMS is disabled: %%keepOrignal%%@->IMS is disabled:$1 {color}:Red
+[ServiceState] setDataRadioTechnology=%%getDataRadioTech%% @->Data Radio Tech Set:$1 {color}:Blue
+< DATA_REGISTRATION_STATE {%%getDataRegState%%, %%keepOrignal%%, %%keepOrignal%%, %%getRilRadioTech%%, %%keepOrignal%%, %%keepOrignal%%,@->DATA registration State:$1 ,LAC:$2 ,CID:$3 ,Radio tech:$4 ,Maxium connection:$6 {color}:Gray
+[PhoneProxy] Switching Voice Phone : %%keepOrignal%% >>> %%keepOrignal%% @->Phone type changing from $1 to $2 {color}:Green
+getSimOperator: subId=%%keepOrignal%% operator=%%keepOrignal%%@->SIM card $1 MCC/MNC: $2 {color}:Blue
+update mccmnc=%%keepOrignal%% config for default subscription@->MCC/MNC are set to $1 {color}:Blue
+[UNSL]< UNSOL_VOICE_RADIO_TECH_CHANGED {%%getRilRadioTech%%} @->Voice technology changed to $1 {color}:Blue 
+InCallPresenter - Phone switching state: %%keepOrignal%% -> %%keepOrignal%%@->Phone call new state: $2 .{color}:Blue
+onFeatureCapabilityChanged, mIsVolteEnabled = %%keepOrignal%% mIsVtEnabled = %%keepOrignal%%@->VOLTE_Enabled = $1  , VT_Enabled = $2 {color}:Blue 
+[event] qcril_qmi_voice_map_qmi_to_ril_last_call_failure_cause: map qmi reason: %%getCallQMIFailedCause%% to ril reason: %%keepOrignal%%@->Call failed reason = $1 ,RIL reason $2 {color}:Red {keepdup}
+#Stylx D RILJ    : [3870]> SETUP_DATA_CALL 16 0 VZWINTERNET null null 0 IPV4V6 [SUB0]
+> SETUP_DATA_CALL %%getSetupDataCallRadioTech%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%%@->Setup Data call (Tech: $1 ,APN : $3 , IP Type: $7 ){color}:Blue {keepdup}
+#> RIL_REQUEST_SET_INITIAL_ATTACH_APN, apn:ivc.mymobiletxt.com, protocol:IPV4V6, authType:-1, username:null, password:null [SUB0]
+> RIL_REQUEST_SET_INITIAL_ATTACH_APN, apn:%%keepOrignal%%, protocol:%%keepOrignal%%,%%keepOrignal%%@->Initial Attach- LTE APN: $1 , Protoco: $2  {color}:green {keepdup}
+#< SETUP_DATA_CALL DataCallResponse: {version=6 status=0 retry=-1 cid=0 active=2 type=IPV4V6 ifname=rmnet_data0 mtu=0 addresses=[100.79.38.238/30] dnses=[198.224.152.119,198.224.154.135] gateways=[100.79.38.237] pcscf=[]} [SUB0]
+# SETUP_DATA_CALL DataCallResponse: {version=%%keepOrignal%% status=%%keepOrignal%% retry=%%keepOrignal%% cid=%%keepOrignal%% active=%%keepOrignal%% type=%%keepOrignal%% ifname=%%keepOrignal%% mtu=%%keepOrignal%% addresses=[%%keepOrignal%%] dnses=[%%keepOrignal%%] gateways=[%%keepOrignal%%] %%keepOrignal%%@->
+####Remeber $1 mush have blank behind. Couldn't use "$1," should use "$1 "##### 
+##New word {keepdup} to display all message include duplicate ones##

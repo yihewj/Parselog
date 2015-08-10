@@ -1,0 +1,23 @@
+#[event] qcril_qmi_voice_map_qmi_to_ril_last_call_failure_cause: map qmi reason: %%getCallQMIFailedCause%% to ril reason: %%keepOrignal%%@->Call failed reason = $1 ,RIL reason $2 {color}:Red {keepdup}
+####Remeber $1 mush have blank behind. Couldn't use "$1," should use "$1 "##### 
+##New word {keepdup} to display all message include duplicate ones##
+##New word {ignoreblank} could ignore non-care log
+#Attach Request - Rx'ed CM_CALL_EVENT_GET_PDN_CONN_IND@->Attach Request - Rx'ed CM_CALL_EVENT_GET_PDN_CONN_IND {color}:Blue
+#Initiate PDN connectivity request@->Initiate PDN connectivity request {color}:Blue
+#Found APN name %%keepOrignal%%, lte_attach_in_progress: %%keepOrignal%%@-> Found APN name:$1 , lte_attach_in_progress:$2 {color}:Blue {keepdup}
+MMR_BLOCK_PLMN_REQ PLMN =%%keepOrignal%%@-> MMR_BLOCK_PLMN_REQ PLMN =$1 {color}:Red {keepdup}
+EVENT_ACCESS_ATTEMPT_FAIL_MAX_PROBES_SENT %%keepOrignal%% @-> EVENT_ACCESS_ATTEMPT_FAIL_MAX_PROBES_SENT {color}:Red {keepdup}
+EVENT_ACCESS_ATTEMPT_FAIL_LOSS_OF_PC_OR_FCCC %%keepOrignal%% @-> EVENT_ACCESS_ATTEMPT_FAIL_LOSS_OF_PC_OR_FCCC {color}:Red {keepdup}
+#PLMN added to temp FPLMN list for other causes backoff time %%keepOrignal%%@-> PLMN added to temp FPLMN list for other causes backoff time $1 {color}:Red {keepdup}
+=CM= VOIP client end cause %%getVoIPCallEndReason%%, call_end %%keepOrignal%%@-> VOIP client end cause $1 {color}:Gray {keepdup}
+=CM= last_system MAIN as_id %%keepOrignal%%, mode %%getSysMode%%, status %%getSysSrvStatus%%@->System Main stack: Mode $2 Srv Status $3 {color}:Blue
+=CM= RXD: MT_INVITE sys_mode=%%keepOrignal%%@->Call receive SIP INVITE from NW {color}:Gray {keepdup}
+=CM= RXD: CALL_END, end_cause=%%keepOrignal%%, client_end_cause=%%getVoIPCallEndReason%%, call_id=%%keepOrignal%%@->Volte call ID $3 end. End cause:$1 , Client end reason:$2 {color}:Blue {keepdup}
+=CM= RXD: CONNECTED%%keepOrignal%% @->Call connected {color}:blue {keepdup}
+Received Message is %%processSIPMessage%%@->Receive SIP event $1 {color}:Gray {keepdup}
+EVENT_SIP_RESPONSE_SEND%%keepOrignal%%@->Send SIP event: $1 {color}:Gray {keepdup}
+Rxed SIP INCOMING%%keepOrignal%% @->SIP Call incoming {color}:blue {keepdup}
+=CM= START cmxcall_mc_rpt_proc, cmd=%%getCMReportName%%@->CM handles MC Report: $1 {color}:Blue {keepdup} {ignoreblank}
+=CM= RXD: CM_1XCSFB_STATUS_F,lte_1xcsfb_result =%%keepOrignal%%                  curr csfb_status =%%keepOrignal%%,                 is_esr_supported =%%keepOrignal%%@->Support CSFB ?: $1 , Support ESR: $3 {color}:Pink
+CMSOA: Switching %%keepOrignal%% ->%%keepOrignal%% @->Switching $1 to $2 {color}:Red {keepdup}
+

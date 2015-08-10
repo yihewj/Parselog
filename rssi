@@ -1,0 +1,13 @@
+#[event] qcril_qmi_voice_map_qmi_to_ril_last_call_failure_cause: map qmi reason: %%getCallQMIFailedCause%% to ril reason: %%keepOrignal%%@->Call failed reason = $1 ,RIL reason $2 {color}:Red {keepdup}
+####Remeber $1 mush have blank behind. Couldn't use "$1," should use "$1 "##### 
+##New word {keepdup} to display all message include duplicate ones##
+##New word {ignoreblank} could ignore non-care log
+#Attach Request - Rx'ed CM_CALL_EVENT_GET_PDN_CONN_IND@->Attach Request - Rx'ed CM_CALL_EVENT_GET_PDN_CONN_IND {color}:Blue
+#Initiate PDN connectivity request@->Initiate PDN connectivity request {color}:Blue
+#Found APN name %%keepOrignal%%, lte_attach_in_progress: %%keepOrignal%%@-> Found APN name:$1 , lte_attach_in_progress:$2 {color}:Blue {keepdup}
+=CM= LTE:cmss_report_rssi(), rssi=%%keepOrignal%%, current_rssi=%%keepOrignal%%, rssi_delta=%%keepOrignal%%@->LTE:cmss_report RSSI: $2 {color}:Blue {keepdup}
+=CM= LTE:cmss_report_rssi(), rsrp=%%keepOrignal%%, current_rsrp=%%getRSRP%%, rsrp_delta=%%keepOrignal%%@->LTE:cmss_report RSRP: $2 {color}:Blue {keepdup}
+=CM= LTE:cmss_report_rssi(), rsrq=%%keepOrignal%%, current_rsrq=%%getRSRQ%%, rsrq_delta=%%keepOrignal%%@->LTE:cmss_report RSRQ: $2 {color}:Blue {keepdup}
+=CM= LTE:cmss_report_rssi(),sinr=%%keepOrignal%%, current_sinr=%%getSINR%%@->LTE:cmss_report SINR: $2 {color}:Blue {keepdup}
+=CM= C:cmss_report_rssi(), rssi = %%keepOrignal%%, current_rssi=%%keepOrignal%%@->CDMA:cmss_report RSSI: $1 {color}:Green {keepdup}
+=CM= C:cmss_report_rssi(), report_rssi=%%keepOrignal%%, ecio=%%keepOrignal%%, current_ecio=%%keepOrignal%%@->CDMA:cmss_report ECIO: $2 {color}:Green {keepdup}
