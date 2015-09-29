@@ -1,3 +1,4 @@
+InCall  : InCallPresenter - Phone switching state: %%keepOrignal%% -> %%keepOrignal%%@->Phone call new state: $2 {color}:Blue
 > REQUEST_SET_PREFERRED_NETWORK_TYPE : %%getNetworkMode%% [SUB0]@->Select Network mode:$1 {color}:blue 
 < VOICE_REGISTRATION_STATE {%%getVoiceRegState%%, %%keepOrignal%%, %%keepOrignal%%, %%getRilRadioTech%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%,@->Voice registration State:$1 ,LAC:$2 ,CID:$3 ,Radio tech:$4 ,Base station:$5 ,System ID:$9 ,Network ID:$10, In PRL:$12 {color}:Gray 
 < OPERATOR {%%keepOrignal%%, %%keepOrignal%%, %%keepOrignal%%}@->Operator long name:$1 ,MCC/MNC:$3 {color}:Red
@@ -8,9 +9,8 @@ IMS is disabled: %%keepOrignal%%@->IMS is disabled:$1 {color}:Red
 [PhoneProxy] Switching Voice Phone : %%keepOrignal%% >>> %%keepOrignal%% @->Phone type changing from $1 to $2 {color}:Green
 getSimOperator: subId=%%keepOrignal%% operator=%%keepOrignal%%@->SIM card $1 MCC/MNC: $2 {color}:Blue
 update mccmnc=%%keepOrignal%% config for default subscription@->MCC/MNC are set to $1 {color}:Blue
-[UNSL]< UNSOL_VOICE_RADIO_TECH_CHANGED {%%getRilRadioTech%%} @->Voice technology changed to $1 {color}:Blue 
-InCallPresenter - Phone switching state: %%keepOrignal%% -> %%keepOrignal%%@->Phone call new state: $2 .{color}:Blue
-onFeatureCapabilityChanged, mIsVolteEnabled = %%keepOrignal%% mIsVtEnabled = %%keepOrignal%%@->VOLTE_Enabled = $1  , VT_Enabled = $2 {color}:Blue 
+[UNSL]< UNSOL_VOICE_RADIO_TECH_CHANGED {%%getRilRadioTech%%} @->Voice technology changed to $1 {color}:Blue
+onFeatureCapabilityChanged, mIsVolteEnabled = %%keepOrignal%% mIsVtEnabled = %%keepOrignal%%@->VOLTE_Enabled = $1  , VT_Enabled = $2 {color}:Blue
 [event] qcril_qmi_voice_map_qmi_to_ril_last_call_failure_cause: map qmi reason: %%getCallQMIFailedCause%% to ril reason: %%keepOrignal%%@->Call failed reason = $1 ,RIL reason $2 {color}:Red {keepdup}
 #Stylx D RILJ    : [3870]> SETUP_DATA_CALL 16 0 VZWINTERNET null null 0 IPV4V6 [SUB0]
 > SETUP_DATA_CALL %%getSetupDataCallRadioTech%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%% %%keepOrignal%%@->Setup Data call (Tech: $1 ,APN : $3 , IP Type: $7 ){color}:Blue {keepdup}
