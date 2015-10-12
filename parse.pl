@@ -10,17 +10,11 @@ use qmifailure qw(getCallQMIFailedCause);
 use Scalar::Util qw(looks_like_number);
 use POSIX;
 
-#my %actions = ( foo => \&foo,
-       #         bar => \&bar,
-       #         baz => sub { print 'baz!' } 
-       #         ... 
-       #       );
-#$actions{$action}->();
-#print add(20, 23,34);
+
 my @keywordfile = (
 
                     );
-#my @highlightcolor = ("red", "blue","#00dd2f");               
+            
 my $time=" ";
 my $date=" ";
 my @arry=("UMTS","LTE");
@@ -331,13 +325,7 @@ sub radiohandle {
 sub HandlelogFile {
     binmode(STDOUT);
     my $file = $_[0];
-  # local $/ = "\r";
-  # open my $info, $file or die "Could not open $file: $!";
-  # while(my $line = <$info>)  {
-  #     $line =~ s/\r|\n//g;
-  #     #print $line;
-  #    radiohandle($line);  
-  # }
+
     open (my $info, '<', $file) or die "Could not open $file: $!";
     while (<$info>) { 
         s/\r\n\z//;
@@ -447,8 +435,7 @@ sub getAndRemoveColor {
 #radiohandle ("09-24 16:03:53.127 D/PHONE   ( 1354): [ServiceState] setDataRadioTechnology=15");
 
 
-#$outname = $ARGV[0].$outname.
-#
+
 my @values = split(/\\/, $ARGV[0]);
 my $last = @values;
 $outname =  $values[$last-1].$outname;
