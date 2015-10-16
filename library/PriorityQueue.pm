@@ -33,16 +33,23 @@ sub delete {
 sub pop {
 	my ($self) = @_;
 	if (!defined($self->{min_key})) {
-		return undef;
+		return (undef, undef);
+        #return undef;
 	}
-
+    my $priority = undef;
+    $priority = $self->{min_key};
 	my $elem = shift(@{$self->{queue}->{$self->{min_key}}});
-	if (!@{$self->{queue}->{$self->{min_key}}}) {
+    
+	if (!@{$self->{queue}->{$self->{min_key}}}) {    
+        
+        #print "!".$priority."!";
 		delete($self->{queue}->{$self->{min_key}});
-		$self->{min_key} = min keys(%{$self->{queue}});
+		$self->{min_key} = min keys(%{$self->{queue}});        
 	}
+    
 	delete($self->{prios}->{$elem});
-	return $elem;
+	return ($elem, $priority);
+    #return $elem;
 }
 
 sub update {

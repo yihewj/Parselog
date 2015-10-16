@@ -1,0 +1,7 @@
+#InCall  : InCallPresenter - Phone switching state: %%keepOrignal%% -> %%keepOrignal%%@->Phone call new state: $2 {color}:Blue
+#10-12 00:47:29.810  2183  4774 E AndroidRuntime: *** FATAL EXCEPTION IN SYSTEM PROCESS: AsyncTask #1
+#10-07 16:26:43.149  4620  4689 I am_anr  : [0,6855,com.skype.raider,948551236,Broadcast of Intent { act=android.media.SCO_AUDIO_STATE_CHANGED flg=0x10000010 cmp=com.skype.raider/com.skype.android.audio.BluetoothReceiver (has extras) }]
+am_anr  : [%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%@-> ANR-- Package Name: $3 User: $1 PID: $2 Reason: $5  {color}:Red {keepdup}
+init: Starting service 'bootanim'%%keepOrignal%%@->Boot up:Starting boot animation {color}:Blue {keepdup}
+AndroidRuntime: *** FATAL EXCEPTION IN SYSTEM PROCESS:%%keepOrignal%%@->Fatal System Process Exception: $1 {color}:Red {keepdup}
+am_crash: [%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%,%%keepOrignal%%@-> APP Crash -- Package Name: $3 User: $1 PID: $2 Reason: $5 File: $6 Line :$7 {color}:Red {keepdup}
